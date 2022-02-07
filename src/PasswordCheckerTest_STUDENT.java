@@ -17,7 +17,7 @@ public class PasswordCheckerTest_STUDENT {
 	private ArrayList<String> validPasswordsArray;
 	private ArrayList<String> invalidPasswordsArray;
 
-	private static int count;
+
 
 	@Before
 	public void setUp() {
@@ -30,7 +30,6 @@ public class PasswordCheckerTest_STUDENT {
 	@After
 	public void tearDown() {
 		validPasswordsArray = null;
-		System.out.println("Count = " + count++);
 	}
 
 	/**

@@ -34,7 +34,7 @@ public class PasswordMain extends BorderPane
 	DecimalFormat format = new DecimalFormat("#0.000");
 	private Alert alert = new Alert(AlertType.INFORMATION);
 	PasswordCheckerUtility pwdChecker;
-	
+
 	public PasswordMain()
 	{
 		VBox subpanel = new VBox();
@@ -54,7 +54,7 @@ public class PasswordMain extends BorderPane
 		subpanel.setAlignment(Pos.CENTER_LEFT);
 		subpanel.getChildren().addAll(instruction1Label, instruction2Label, instruction3Label,
 				instruction4Label, instruction5Label, instruction6Label);
-		
+
 		HBox subpanel1a = new HBox();
 		passwordLabel = new Label ("Password");
 		//passwordText = new PasswordField();
@@ -63,7 +63,7 @@ public class PasswordMain extends BorderPane
 		HBox.setMargin(passwordText, new Insets(10,10,10,10));
 		subpanel1a.setAlignment(Pos.CENTER);
 		subpanel1a.getChildren().addAll(passwordLabel, passwordText);
-		
+
 		HBox subpanel1b = new HBox();
 		passwordALabel = new Label ("Re-type\nPassword");
 		//passwordAText = new PasswordField();
@@ -72,45 +72,45 @@ public class PasswordMain extends BorderPane
 		HBox.setMargin(passwordAText, new Insets(10,10,10,10));
 		subpanel1b.setAlignment(Pos.CENTER);
 		subpanel1b.getChildren().addAll(passwordALabel, passwordAText);
-		
+
 		VBox subpanel1 = new VBox();
 		VBox.setMargin(subpanel1a, new Insets(10,10,10,10));
 		VBox.setMargin(subpanel1b, new Insets(10,10,10,10));
 		subpanel1.setAlignment(Pos.CENTER);
 		subpanel1.getChildren().addAll(subpanel1a, subpanel1b);
-				
+
 		checkPwdsInFileButton = new Button("Check Passwords in _File");
-		checkPwdsInFileButton.setMnemonicParsing(true); 
+		checkPwdsInFileButton.setMnemonicParsing(true);
 		checkPwdsInFileButton.setTooltip(new Tooltip("Select to read passwords from a file"));
 		checkPwdsInFileButton.setOnAction(
-        		event -> {
-        			try {
+				event -> {
+					try {
 						readFile();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-        		});
-		
+				});
+
 		checkPwdButton = new Button ("Check _Password");
-		checkPwdButton.setMnemonicParsing(true); 
+		checkPwdButton.setMnemonicParsing(true);
 		checkPwdButton.setTooltip(new Tooltip("Select to check a password."));
 		checkPwdButton.setOnAction(
-        		event -> {
-        			checkPassword();
-        		});
-		
+				event -> {
+					checkPassword();
+				});
+
 		exitButton = new Button("E_xit");
-	    exitButton.setMnemonicParsing(true);  
-	    exitButton.setTooltip(new Tooltip("Select to close the application"));
-	    //use a lambda expression for the EventHandler class for exitButton
-	    exitButton.setOnAction(
-        		event -> {
-	            	 Platform.exit();
-	                 System.exit(0);
-        		}
-        	);
-		 
-	
+		exitButton.setMnemonicParsing(true);
+		exitButton.setTooltip(new Tooltip("Select to close the application"));
+		//use a lambda expression for the EventHandler class for exitButton
+		exitButton.setOnAction(
+				event -> {
+					Platform.exit();
+					System.exit(0);
+				}
+		);
+
+
 		HBox buttonPanel = new HBox();
 		HBox.setMargin(checkPwdButton, new Insets(10,10,10,10));
 		HBox.setMargin(checkPwdsInFileButton, new Insets(10,10,10,10));
@@ -122,7 +122,7 @@ public class PasswordMain extends BorderPane
 		setCenter(subpanel1);
 		setBottom(buttonPanel);
 
-	
+
 	}
 
 	public void checkPassword() {
@@ -134,7 +134,7 @@ public class PasswordMain extends BorderPane
 			if (!PasswordCheckerUtility.comparePasswordsWithReturn(passwordString, passwordAString)) {
 				throw new UnmatchedException();
 			}
-			
+
 			if (PasswordCheckerUtility.isValidPassword(passwordString)) {
 				if (PasswordCheckerUtility.isWeakPassword(passwordString)) {
 					alert.setContentText("Password is OK but weak");
@@ -143,7 +143,7 @@ public class PasswordMain extends BorderPane
 				else {
 					alert.setContentText("Password is valid");
 					alert.showAndWait();
-				}	
+				}
 			} else {
 				alert.setContentText("Password is Not valid");
 				alert.showAndWait();
@@ -157,7 +157,7 @@ public class PasswordMain extends BorderPane
 		catch (Exception ex)		{
 			alert.setContentText(ex.getMessage());
 			alert.showAndWait();
-		}			
+		}
 	}
 
 	public void readFile() {

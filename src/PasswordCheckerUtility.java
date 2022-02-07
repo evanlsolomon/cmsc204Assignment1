@@ -102,7 +102,7 @@ public class PasswordCheckerUtility {
 	 * @return true if meet Digit requirement
 	 * @throws NoDigitException thrown if does not meet Digit requirement
 	 */
-	static boolean hasDigit(String password) throws NoDigitException {
+ 	static boolean hasDigit(String password) throws NoDigitException {
 		String rgx = ".*[0-9]+.*";
 		Pattern pattern = Pattern.compile(rgx);
 		Matcher matcher = pattern.matcher(password);
