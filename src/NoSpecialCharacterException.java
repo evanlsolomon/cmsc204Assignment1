@@ -1,3 +1,7 @@
+/**
+ * Exception class for password without special characters
+ * @author Evan Solomon
+ */
 public class NoSpecialCharacterException extends Exception {
 	
 	public NoSpecialCharacterException() {

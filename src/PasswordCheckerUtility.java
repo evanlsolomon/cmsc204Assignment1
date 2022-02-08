@@ -26,7 +26,6 @@ public class PasswordCheckerUtility {
 	 * @param password string to be checked for validity
 	 * @return true if valid password (follows all rules from above), false if an invalid password
 	 * @throws LengthException thrown if length is less than 6 characters
-	 * @throws NoUpperAlphaException thrown if no uppercase alphabetic
 	 * @throws NoLowerAlphaException thrown if no lowercase alphabetic
 	 * @throws NoDigitException thrown if no digit
 	 * @throws NoSpecialCharacterException thrown if does not meet SpecialCharacter requirement

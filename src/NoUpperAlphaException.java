@@ -1,3 +1,7 @@
+/**
+ * Exception class for password without no uppercase alphabetic character
+ * @author Evan Solomon
+ */
 public class NoUpperAlphaException extends Exception {
 
 	public NoUpperAlphaException() {

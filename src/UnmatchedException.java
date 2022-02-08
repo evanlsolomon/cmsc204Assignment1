@@ -1,3 +1,7 @@
+/**
+ * Exception class for password and password confirmation mismatch
+ * @author Evan Solomon
+ */
 public class UnmatchedException extends Exception {
 
 	public UnmatchedException() {
