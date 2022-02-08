@@ -1,3 +1,7 @@
+/**
+ * Exception class for password with three identical contiguous characters
+ * @author Evan Solomon
+ */
 public class InvalidSequenceException extends Exception {
 
 	public InvalidSequenceException() {
